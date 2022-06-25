@@ -4,15 +4,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import 'package:flutter_app/supply.dart';
-
 import 'page/home_page.dart';
 import 'page/point_raiting_page.dart';
 import 'page/timetable_page.dart';
 
 void main() {
  HttpOverrides.global = MyHttpOverrides();
- get();
  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {

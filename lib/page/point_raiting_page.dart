@@ -9,10 +9,14 @@ class PointRaitingPage extends StatelessWidget{
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Colors.red,
     body: Center(
-        child: Text(
-          'In work...',
-          style: TextStyle(fontSize: 60, color: Colors.white),
-      )
+      //   child: Text(
+      //     'In work...',
+      //     style: TextStyle(fontSize: 60, color: Colors.white),
+      // )
+      child: TextButton(
+        onPressed:(){get();},
+        child: Text("ASDASD"),
+      ),
     ),
   );
 }
