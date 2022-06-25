@@ -2,5 +2,6 @@
 
 ## Задействованы:
 
-- Работа с http.dart
+- Работа с http.dart (get запрос)
 - ListView
+- BottomNavigationBar (Curved в частности)
