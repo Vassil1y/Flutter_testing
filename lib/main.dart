@@ -1,15 +1,15 @@
 
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter_app/supply.dart';
 
 import 'page/home_page.dart';
 import 'page/point_raiting_page.dart';
 import 'page/timetable_page.dart';
 
-void main() {
- HttpOverrides.global = MyHttpOverrides();
+void main() async {
+  await  get();
+ // HttpOverrides.global = MyHttpOverrides();
  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -59,10 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       body: screens[index],
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.white,
 
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
+        color: Colors.grey,
         index: index,
         items: items,
         onTap: (index)=> setState(() => this.index = index),
@@ -70,12 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-class MyHttpOverrides extends HttpOverrides{
-  @override
-  HttpClient createHttpClient(SecurityContext? context){
-    return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
-  }
-}
+//
+//
+// class MyHttpOverrides extends HttpOverrides{
+//   @override
+//   HttpClient createHttpClient(SecurityContext? context){
+//     return super.createHttpClient(context)
+//       ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+//   }
+// }

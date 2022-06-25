@@ -4,8 +4,9 @@ import 'dart:convert';
 
 Map<String, String> lessons = {}; // id : Название, номер аудитории
 Map<String, String> time = {};    // id : Время
+List<String> out = [];            // Время, Название, номер аудитории
 
-lists_creator(var shedule){
+listsCreator(var shedule){
   List<Map<String, dynamic>> local = [];
 
   for(int i = 0; i<6; i++){
@@ -15,7 +16,7 @@ lists_creator(var shedule){
   }
 
   for (Map<String, dynamic> element in shedule['curricula']) {
-    lessons.putIfAbsent(element["lessonid"].toString(), () => element["subjectname"].toString() + element["roomname"].toString());
+    lessons.putIfAbsent(element["lessonid"].toString(), () => element["subjectname"].toString() + " " + element["roomname"].toString());
   }
 
   for (Map<String, dynamic> element in local) {
@@ -24,6 +25,8 @@ lists_creator(var shedule){
 
   print(lessons);
   print(time);
+
+  totalOut();
 }
 
 
@@ -43,8 +46,16 @@ get() async{
     print('${shedule.runtimeType} : $shedule');
     // print(shedule['curricula']);
 
-    lists_creator(shedule);
+    listsCreator(shedule);
 
   }catch(error){print("Error: $error");}
+
+}
+
+totalOut(){
+  time.forEach((key, value) {
+    var local = value.toString().split(",");
+    out.add(lessons[key].toString() + " " + local[1].substring(0, local[1].lastIndexOf(":")) + " - " + local[2].substring(0, local[2].lastIndexOf(":")));
+  });
 
 }

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class TimeTablePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.white,
     body: Center(
       child: Text(
         'In work...',
-        style: TextStyle(fontSize: 60, color: Colors.white),
+        style: TextStyle(fontSize: 60, color: Colors.black),
       ),
     ),
   );

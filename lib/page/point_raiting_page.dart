@@ -2,20 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app/supply.dart';
-
 class PointRaitingPage extends StatelessWidget{
+  const PointRaitingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.white,
     body: Center(
-      //   child: Text(
-      //     'In work...',
-      //     style: TextStyle(fontSize: 60, color: Colors.white),
-      // )
-      child: TextButton(
-        onPressed:(){get();},
-        child: Text("ASDASD"),
+      child: Text(
+        'In work...',
+        style: TextStyle(fontSize: 60, color: Colors.black),
       ),
     ),
   );
