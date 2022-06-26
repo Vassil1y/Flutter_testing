@@ -33,7 +33,7 @@ listsCreator(var shedule){
 get() async{
   try {
     var response;
-    // response = await http.post(Uri.parse('https://openid.sfedu.ru/server.php/login'), body: {'openid_url':'ivzaharov@sfedu.ru','password':'Qaplqapl'});
+    // response = await http.post(Uri.parse('https://openid.sfedu.ru/server.php/login'), body: {''});
     // print("Response status: ${response.statusCode}");
     // print("Response body: ${response.body}");
 
